@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Soal Qbit</title>
+  </head>
+
+  <body>
+    <script>
+      const fruits = [
+        {
+          fruitId: 1,
+          fruitName: "Apel",
+          fruitType: "IMPORT",
+          stock: 10,
+        },
+        {
+          fruitId: 2,
+          fruitName: "Kurma",
+          fruitType: "IMPORT",
+          stock: 20,
+        },
+        {
+          fruitId: 3,
+          fruitName: "apel",
+          fruitType: "IMPORT",
+          stock: 50,
+        },
+        {
+          fruitId: 4,
+          fruitName: "Manggis",
+          fruitType: "LOCAL",
+          stock: 100,
+        },
+        {
+          fruitId: 5,
+          fruitName: "Jeruk Bali",
+          fruitType: "LOCAL",
+          stock: 10,
+        },
+        {
+          fruitId: 5,
+          fruitName: "KURMA",
+          fruitType: "IMPORT",
+          stock: 20,
+        },
+        {
+          fruitId: 5,
+          fruitName: "Salak",
+          fruitType: "LOCAL",
+          stock: 150,
+        },
+      ];
+
+      //Soal 1
+      const soal1 = fruits.map((fruit) => fruit.fruitName.toLowerCase());
+      let soal1lc = [];
+      soal1.forEach((element) => {
+        if (!soal1lc.includes(element)) {
+          soal1lc.push(element);
+        }
+      });
+
+      document.write("<h3>Soal 1 : </h3>" + soal1lc + "</br>");
+
+      //Soal 2
+      const soal2Wadah = fruits.map((fruit) => fruit.fruitType);
+      let set = new Set();
+      let jumlahWadah = soal2Wadah.filter((x) => {
+        const str = JSON.stringify(x);
+        return !set.has(str) && set.add(str);
+      });
+
+      const soal2Import = fruits
+        .filter((fruit) => fruit.fruitType === "IMPORT")
+        .map((fruit) => fruit.fruitName.toLowerCase());
+      let buahimport = [];
+      soal2Import.forEach((element) => {
+        if (!buahimport.includes(element)) {
+          buahimport.push(element);
+        }
+      });
+
+      const soal2Local = fruits
+        .filter((fruit) => fruit.fruitType === "LOCAL")
+        .map((fruit) => fruit.fruitName.toLowerCase());
+      document.write(
+        "<h3> Soal 2 : </h3>" +
+          "Jumlah Wadah = " +
+          jumlahWadah.length +
+          ", Yaitu " +
+          jumlahWadah +
+          "</br>" +
+          "Import = " +
+          buahimport +
+          "</br>" +
+          "Local = " +
+          soal2Local +
+          "</br>"
+      );
+
+      //Soal 3
+      const soal3Import = fruits
+        .filter((fruit) => fruit.fruitType === "IMPORT")
+        .map((fruit) => fruit.stock);
+      const soal3Local = fruits
+        .filter((fruit) => fruit.fruitType === "LOCAL")
+        .map((fruit) => fruit.stock);
+
+      let totalimport = 0;
+      for (var i = 0; i < soal3Import.length; i++) {
+        totalimport += soal3Import[i];
+      }
+      let totallocal = 0;
+      for (var i = 0; i < soal3Local.length; i++) {
+        totallocal += soal3Local[i];
+      }
+      document.write(
+        "<h3>Soal 3 : </h3>" +
+          "Total Buah Wadah Import = " +
+          totalimport +
+          "</br>" +
+          "Total Buah Wadah Local = " +
+          totallocal
+      );
+
+      //Soal 5
+      const comments = [
+        {
+          commentId: 1,
+          commentContent: "Hai",
+          replies: [
+            {
+              commentId: 11,
+              commentContent: "Hai juga",
+              replies: [
+                {
+                  commentId: 111,
+                  commentContent: "Haai juga hai jugaa",
+                },
+                {
+                  commentId: 112,
+                  commentContent: "Haai juga hai jugaa",
+                },
+              ],
+            },
+            {
+              commentId: 12,
+              commentContent: "Hai juga",
+              replies: [
+                {
+                  commentId: 121,
+                  commentContent: "Haai juga hai jugaa",
+                },
+              ],
+            },
+          ],
+        },
+        {
+          commentId: 2,
+          commentContent: "Halooo",
+        },
+      ];
+
+      const soal5 = Object.keys(comments).length;
+      document.write("<h3>Soal 5 : </h3>" + soal5 + "</br>");
+    </script>
+  </body>
+</html>

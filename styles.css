@@ -1,0 +1,99 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #dea057;
+}
+
+.bg1 {
+  width: 100%;
+  height: 630px;
+  position: relative;
+  z-index: 0;
+  top: 0px;
+}
+
+.jumbotron {
+  left: 80px;
+  right: 80px;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  top: 100px;
+  z-index: 2;
+}
+
+.container1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about {
+  margin-top: 30px;
+}
+
+.about hr {
+  width: 250px;
+  border-top: 4px solid #666;
+}
+
+.about p {
+  text-align: justify;
+}
+
+.kelebihan {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.produk {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  background-color: #e0d8b0;
+  border-radius: 10px;
+  color: black;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.contact {
+  margin-top: 20px;
+  display: flex;
+}
+
+@media (max-width: 800px) {
+  .bg1 {
+    height: 1500px;
+  }
+
+  .gambar-home {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .kelebihan {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produk {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .contact {
+    flex-direction: column;
+  }
+}
